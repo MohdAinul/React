@@ -2,12 +2,13 @@
 
 :- It lets us store values (like numbers, strings, objects, arrays) and re-render the component when those values change.
 
-````
-syntax : const [state, setState] = useState(initialValue);```
+```
+syntax : const [state, setState] = useState(initialValue);
+```
 
 example:-
-````
 
+````
 import { useState } from "react";
 
 function Counter() {
@@ -43,3 +44,4 @@ setCount(prev => prev + 1);
 setCount(prev => prev + 1);
 
 Now correct: +2
+````
