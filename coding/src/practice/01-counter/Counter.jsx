@@ -14,6 +14,7 @@ function Counter() {
       >
         Decrease
       </button>
+      <button onClick={() => setCount(0)}>Reset</button>
     </div>
   );
 }
