@@ -2,14 +2,26 @@ import { useState } from "react";
 
 function Counter() {
   const [count, setCount] = useState(0);
+  const [step, setStep] = useState(1);
   return (
     <div>
       <h1>Counter</h1>
       <p>Count is : {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <input
+        type="number"
+        value={step}
+        onChange={(e) => setStep(Number(e.target.value))}
+      />
       <button
         onClick={() => {
-          if (count > 0) setCount(count - 1);
+          if (count + step <= 5) setCount(step + count);
+        }}
+      >
+        Increase
+      </button>
+      <button
+        onClick={() => {
+          if (count - step >= 0) setCount(count - step);
         }}
       >
         Decrease
