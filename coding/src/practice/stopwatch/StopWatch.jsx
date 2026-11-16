@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const StopWatch = () => {
   const [second, setSecond] = useState(0);
   const [isruning, setIsruning] = useState(false);
+  const [lap, setLap] = useState([]);
   useEffect(() => {
     let interval;
     if (isruning) {
@@ -16,6 +17,11 @@ const StopWatch = () => {
   const handleReset = () => {
     setIsruning(false);
     setSecond(0);
+    setLap([]);
+  };
+
+  const handlelap = () => {
+    if (isruning) setLap((prevlap) => [...prevlap, second]);
   };
   return (
     <div>
@@ -24,6 +30,12 @@ const StopWatch = () => {
       <button onClick={() => setIsruning(true)}>start</button>
       <button onClick={() => setIsruning(false)}>stop</button>
       <button onClick={handleReset}>reset</button>
+      <button onClick={handlelap}>lap</button>
+      <ul>
+        {lap.map((laptime, index) => (
+          <li key={index}>lap : {laptime} </li>
+        ))}
+      </ul>
     </div>
   );
 };
