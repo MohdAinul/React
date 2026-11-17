@@ -3,9 +3,10 @@ import TodoList from "./practice/02-todo-list/TodoList";
 import ToggleMessage from "./practice/03-toggle-message/ToggleMessage";
 import CharacterConter from "./practice/characterCounter/CharacterConter";
 import StopWatch from "./practice/stopwatch/StopWatch";
+import SearchFilterFruit from "./practice/filterFuntion/SearchFilterFruit";
 
 function App() {
-  return <StopWatch />;
+  return <SearchFilterFruit />;
 }
 
 export default App;

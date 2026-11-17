@@ -11,6 +11,11 @@ function TodoList() {
     settasks([...tasks, cleanedTask]);
     settask("");
   }
+
+  function handleDelete(indextoDelete) {
+    const updatedTask = tasks.filter((item, index) => index !== indextoDelete);
+    settasks(updatedTask);
+  }
   return (
     <div>
       <h1>Todo List</h1>
@@ -23,7 +28,16 @@ function TodoList() {
       <button onClick={handleAdd}>Add</button>
       <ul>
         {tasks.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index}>
+            {item}
+            <button
+              onClick={() => {
+                handleDelete(index);
+              }}
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </div>
